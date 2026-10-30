@@ -1,0 +1,44 @@
+---
+import { SITE, FOOTER_NAV, url } from '../data/site';
+import SocialIcons from './SocialIcons.astro';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src={url('/img/logo.png')} alt="Intrepid Luxe. Travel perfectly tailored." width="541" height="313" loading="lazy" />
+        <p>Personalised holidays, planned and booked for you by Emilie.</p>
+        <p>
+          <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a><br />
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        </p>
+        <div class="footer__social"><SocialIcons /></div>
+      </div>
+
+      <div>
+        <h2 class="footer__title" id="footer-explore">Explore</h2>
+        <nav aria-labelledby="footer-explore">
+          <ul class="footer__nav">
+            {FOOTER_NAV.map((n) => <li><a href={url(n.href)}>{n.label}</a></li>)}
+          </ul>
+        </nav>
+      </div>
+
+      <div>
+        <h2 class="footer__title">Your protection</h2>
+        <div class="badges">
+          <img src={url('/img/abta.png')} alt="ABTA. Travel with confidence. ABTA number P7384." width="400" height="217" loading="lazy" />
+          <img src={url('/img/atol.png')} alt="ATOL protected, number 12022." width="216" height="216" loading="lazy" />
+        </div>
+        <p class="footer__legal">Intrepid Luxe is affiliated with InteleTravel (ABTA P7384).</p>
+        <p class="footer__legal">All flights included in package holidays are ATOL protected.</p>
+      </div>
+    </div>
+
+    <div class="footer__base">
+      <span>&copy; {year} Intrepid Luxe. All rights reserved.</span>
+      <a href={url('/privacy-policy/')}>Privacy policy</a>
+    </div>
+  </div>
+</footer>

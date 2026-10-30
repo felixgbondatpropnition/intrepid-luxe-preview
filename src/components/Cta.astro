@@ -1,0 +1,18 @@
+---
+import { SITE, url } from '../data/site';
+const {
+  heading = 'Let’s plan your next adventure',
+  text = 'A weekend escape, a special celebration or the trip you’ve always dreamed of. Get in touch for a friendly, no-obligation chat.',
+} = Astro.props;
+---
+<section class="section cta">
+  <div class="wrap" data-stagger>
+    <h2>{heading}</h2>
+    <p>{text}</p>
+    <div class="cta__contact">
+      <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    </div>
+    <div class="btn-row"><a class="btn btn--navy" href={url('/contact/')}>Send an enquiry</a></div>
+  </div>
+</section>

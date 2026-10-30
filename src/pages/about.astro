@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import Banner from '../components/Banner.astro';
+import Photo from '../components/Photo.astro';
+import Cta from '../components/Cta.astro';
+---
+<Base
+  title="About"
+  description="Meet Emilie, founder of Intrepid Luxe. Personalised holidays with a one-to-one service from the first conversation until you’re safely home."
+  image="hero-palms-sunset.jpg"
+>
+  <Banner title="About Intrepid Luxe" image="hero-palms-sunset.jpg" />
+  <section class="section">
+    <div class="wrap about">
+      <div class="prose" data-reveal>
+        <p>Welcome to Intrepid Luxe. I’m Emilie, founder of an independent travel business dedicated to creating personalised holidays and unforgettable experiences.</p>
+        <p>The name Intrepid Luxe brings together everything I love about travel: the excitement of discovering somewhere new, with a little luxury along the way. I believe every holiday should feel personal to you, and planning it should be part of the enjoyment.</p>
+        <p>Whether you’re dreaming of a luxury escape, a family holiday, a romantic getaway, a cruise or a once-in-a-lifetime adventure, I’m here to bring your ideas to life.</p>
+        <h2>Holidays designed around you</h2>
+        <p>From relaxing beach breaks and city stays to tailor-made adventures and special celebrations, I’ll help you find a holiday that suits your style and budget.</p>
+        <p>I can arrange flights, accommodation, transfers, car hire and excursions, alongside theme park visits, sporting events and those thoughtful extras that make a trip memorable.</p>
+        <h2>Personal service, from start to finish</h2>
+        <p>With access to almost 100 trusted travel suppliers, I can offer a wide choice of holidays, competitive prices and opportunities for exclusive extras.</p>
+        <p>At the heart of Intrepid Luxe is a personal, one-to-one service. I take the time to understand what matters to you, offer honest advice and look after the details, from our first conversation until you’re safely home.</p>
+        <p>My travel planning and booking service comes at no extra cost to you, leaving you free to enjoy the anticipation of your next adventure.</p>
+      </div>
+      <div class="about__photo" data-reveal="wipe">
+        <Photo name="emilie-jaipur" alt="Emilie, founder of Intrepid Luxe, in Jaipur" sizes="(min-width: 821px) 35vw, 100vw" loading="lazy" />
+      </div>
+    </div>
+  </section>
+  <Cta />
+</Base>

@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Banner from '../../components/Banner.astro';
+import Cta from '../../components/Cta.astro';
+import JournalList from '../../components/JournalList.astro';
+
+const posts = (await getCollection('journal')).sort((a, b) => +b.data.date - +a.data.date);
+---
+<Base
+  title="The Intrepid Journal"
+  description="Travel inspiration, news and advice from Intrepid Luxe, with a little luxury along the way."
+  image="harbour-sunset.jpg"
+>
+  <Banner title="The Intrepid Journal" image="harbour-sunset.jpg" intro="Travel inspiration, news and advice, with a little luxury along the way." />
+  <JournalList posts={posts} />
+  <Cta heading="Inspired to go somewhere?" text="Tell me what caught your eye and I’ll plan the holiday around you." />
+</Base>

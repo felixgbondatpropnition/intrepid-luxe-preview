@@ -1,0 +1,26 @@
+---
+import { CATEGORIES, categorySlug, url } from '../data/site';
+import PostCard from './PostCard.astro';
+const { posts, active } = Astro.props;
+---
+<section class="section">
+  <div class="wrap">
+    <nav aria-label="Journal categories">
+      <ul class="cats">
+        <li class:list={{ 'is-active': !active }}><a href={url('/journal/')} aria-current={!active ? 'page' : undefined}>All</a></li>
+        {CATEGORIES.map((c) => (
+          <li class:list={{ 'is-active': active === c }}>
+            <a href={url(`/journal/category/${categorySlug(c)}/`)} aria-current={active === c ? 'page' : undefined}>{c}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    {posts.length ? (
+      <div class="cards" data-stagger>{posts.map((post) => <PostCard post={post} />)}</div>
+    ) : (
+      <p class="empty">
+        Articles are on their way. In the meantime, follow Intrepid Luxe on social media for current offers and inspiration, or <a href={url('/contact/')}>get in touch</a> to start planning.
+      </p>
+    )}
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import Banner from '../components/Banner.astro';
+import { SITE } from '../data/site';
+---
+<Base title="Privacy policy" description="How Intrepid Luxe collects and uses your personal information, and your rights.">
+  <Banner title="Privacy policy" />
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <p>Last updated: 30 October 2026.</p>
+        <p>Intrepid Luxe (“I”, “me”) is a personalised travel planning and booking service run by Emilie Amos. This page explains what personal information I collect through this website, why, and what your rights are.</p>
+        <h2>Who is responsible for your information</h2>
+        <p>Emilie Amos, trading as Intrepid Luxe. You can contact me at <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or on {SITE.phoneDisplay}.</p>
+        <h2>What I collect and why</h2>
+        <p><strong>Enquiries.</strong> If you complete the travel requirements form, or contact me by email, phone or social media, I receive the details you give me, such as your name, contact details, travel dates, destination ideas, budget and who is travelling. I use these to reply to you, put together a quote and, if you choose to go ahead, make your booking. My lawful basis is that this is needed to take steps at your request before a contract, and to carry out that contract.</p>
+        <p><strong>Bookings.</strong> To book a holiday I need to share the necessary details, for example passenger names and passport information, with the travel suppliers who provide it. I only share what is needed for your booking. Intrepid Luxe is affiliated with InteleTravel (ABTA P7384), which holds the ABTA membership under which I trade.</p>
+        <p><strong>This website.</strong> The site does not use advertising or analytics tracking. Your web browser sends standard technical information (such as your IP address) to the server that hosts the site, as happens with every website.</p>
+        <h2>Who else handles your information</h2>
+        <p>The enquiry form is provided by Cognito Forms. When you submit it, Cognito Forms stores your answers on my behalf and passes them to me. The form may also set its own cookies when it loads. See <a href="https://www.cognitoforms.com/legal/privacy-policy" target="_blank" rel="noopener">Cognito Forms’ privacy policy</a>. I never sell your information or use it for anything other than your enquiry or booking.</p>
+        <h2>Cookies</h2>
+        <p>This website itself sets no tracking or advertising cookies. The only cookies you may meet are those set by the Cognito Forms enquiry form on the Contact page. Links to Instagram, Facebook and TikTok take you to those sites, which have their own cookie and privacy policies.</p>
+        <h2>How long I keep it</h2>
+        <p>I keep enquiry and booking information for as long as it is needed to deal with your request, to support you before, during and after your holiday, and to meet legal and accounting obligations. If an enquiry does not lead to a booking, ask me and I will delete it.</p>
+        <h2>Your rights</h2>
+        <p>You can ask to see the information I hold about you, have it corrected or deleted, restrict or object to how I use it, or ask for a copy to move elsewhere. Email me and I will respond within one month. If you are unhappy with how I have handled your information, you can complain to the Information Commissioner’s Office at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">ico.org.uk</a>.</p>
+      </div>
+    </div>
+  </section>
+</Base>

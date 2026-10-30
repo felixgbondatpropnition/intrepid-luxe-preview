@@ -1,0 +1,13 @@
+---
+import Photo from './Photo.astro';
+const { title, image, intro } = Astro.props;
+---
+<section class:list={['banner', { 'banner--plain': !image }]}>
+  {image && (
+    <div class="media"><Photo name={image.replace(/\.jpg$/, '')} data-parallax="0.05" fetchpriority="high" /></div>
+  )}
+  <div class="wrap">
+    <h1 class="rise">{title}</h1>
+    {intro && <p class="rise" style="--d:120ms">{intro}</p>}
+  </div>
+</section>

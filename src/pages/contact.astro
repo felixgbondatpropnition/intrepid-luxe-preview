@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import Banner from '../components/Banner.astro';
+import SocialIcons from '../components/SocialIcons.astro';
+import { SITE } from '../data/site';
+---
+<Base
+  title="Contact"
+  description="Get in touch with Intrepid Luxe for a friendly, no-obligation chat about your next holiday. Call, email or send an enquiry."
+  image="hero-beach.jpg"
+>
+  <Banner title="Contact" image="hero-beach.jpg" />
+  <section class="section">
+    <div class="wrap">
+      <div class="contact">
+        <div class="contact__details" data-reveal>
+          <h2>Let’s talk about your holiday</h2>
+          <div class="prose" style="margin:0 0 1.5em">
+            <p>A weekend escape, a special celebration or the trip you’ve always dreamed of: I’d love to help you make it happen. Get in touch for a friendly, no-obligation chat.</p>
+          </div>
+          <ul class="contact__list">
+            <li><small>Call or text</small><a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a></li>
+            <li><small>Email</small><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          </ul>
+          <p><small class="label" style="margin-bottom:10px">Follow Intrepid Luxe</small></p>
+          <SocialIcons dark />
+          <p class="form-note" style="margin-top:20px">Current offers, inspiration and updates are shared on social media.</p>
+        </div>
+        <div data-reveal style="--d:140ms">
+          <div class="form-embed">
+            <script is:inline src="https://www.cognitoforms.com/f/seamless.js" data-key="h_V3IOE8akyDcNa_sIESxw" data-form="3"></script>
+          </div>
+          <p class="form-note">Form not showing? <a href={SITE.formUrl} target="_blank" rel="noopener">Open the enquiry form in a new tab</a>, or email me directly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

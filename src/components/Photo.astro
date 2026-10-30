@@ -1,0 +1,9 @@
+---
+import { PHOTOS, url } from '../data/site';
+// <Photo name="hero-beach" sizes="100vw" alt="" /> picks the phone-sized copy on small screens.
+const { name, sizes = '100vw', alt = '', ...rest } = Astro.props;
+const info = PHOTOS[name];
+const src = url(`/img/${name}.jpg`);
+const srcset = info?.small ? `${url(`/img/${name}-${info.small}.jpg`)} ${info.small}w, ${src} ${info.w}w` : undefined;
+---
+<img src={src} srcset={srcset} sizes={srcset ? sizes : undefined} width={info?.w} height={info?.h} alt={alt} {...rest} />

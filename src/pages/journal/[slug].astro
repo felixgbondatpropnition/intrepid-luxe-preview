@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import { categorySlug, url } from '../../data/site';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('journal')).sort((a, b) => +b.data.date - +a.data.date);
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    // posts are newest first, so the next index is the older article
+    props: { post, newer: posts[i - 1], older: posts[i + 1] },
+  }));
+}
+
+const { post, newer, older } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const date = d.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+<Base
+  title={d.seoTitle ?? d.title}
+  description={d.seoDescription ?? d.summary}
+  image={d.image}
+  type="article"
+>
+  <article>
+    <section class="section" style="padding-bottom:0">
+      <div class="post-head">
+        <div class="wrap" style="padding:0">
+          <div class="post-meta">
+            <a href={url(`/journal/category/${categorySlug(d.category)}/`)}>{d.category}</a>
+            <time datetime={d.date.toISOString()}>{date}</time>
+          </div>
+          <h1>{d.title}</h1>
+        </div>
+      </div>
+    </section>
+    {d.image && (
+      <div class="post-hero"><img src={url(`/img/${d.image}`)} alt={d.imageAlt} width="2000" height="1000" /></div>
+    )}
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="prose"><Content /></div>
+        {(newer || older) && (
+          <nav class="post-nav" aria-label="More articles">
+            <div>{older && <a href={url(`/journal/${older.id}/`)}><span>Previous</span>{older.data.title}</a>}</div>
+            <div>{newer && <a href={url(`/journal/${newer.id}/`)}><span>Next</span>{newer.data.title}</a>}</div>
+          </nav>
+        )}
+      </div>
+    </section>
+  </article>
+  <Cta heading="Thinking of a trip like this?" text="Get in touch for a friendly, no-obligation chat about your next holiday." />
+</Base>

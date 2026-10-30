@@ -1,0 +1,58 @@
+---
+import { url } from '../data/site';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string; // page title; the site name is added
+  description: string;
+  image?: string; // file name in public/img for link previews
+  type?: 'website' | 'article';
+  bodyClass?: string;
+  noindex?: boolean;
+}
+const { title, description, image = 'hero-beach.jpg', type = 'website', bodyClass, noindex = false } = Astro.props;
+const fullTitle = title ? `${title} | Intrepid Luxe` : 'Intrepid Luxe | Personalised travel planning and booking';
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(url(`/img/${image}`), Astro.site).href;
+const hidden = noindex || import.meta.env.PUBLIC_NOINDEX === '1';
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#5fdde5" />
+    <script is:inline>
+      document.documentElement.className += ' js';
+      // If the page script never starts, show everything rather than leave content hidden.
+      setTimeout(function () { if (!window.__motion) document.documentElement.classList.remove('js'); }, 4000);
+    </script>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {hidden ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <link rel="icon" href={url('/favicon.png')} type="image/png" />
+    <link rel="preload" href={url('/fonts/mulish-latin-400-normal.woff2')} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={url('/fonts/cormorant-garamond-latin-400-normal.woff2')} as="font" type="font/woff2" crossorigin />
+    <meta property="og:site_name" content="Intrepid Luxe" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {!hidden && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body class={bodyClass}>
+    <a class="screen-reader-text skip-link" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"></div>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/motion.ts';
+    </script>
+  </body>
+</html>

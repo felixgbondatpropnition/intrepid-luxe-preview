@@ -1,0 +1,16 @@
+---
+import { url } from '../data/site';
+import { render } from 'astro:content';
+const { review } = Astro.props;
+const { Content } = await render(review);
+---
+<figure class="review">
+  {review.data.photo && (
+    <div class="review__photo"><img src={url(`/img/reviews/${review.data.photo}`)} alt="" loading="lazy" width="96" height="96" /></div>
+  )}
+  <blockquote class="review__text"><Content /></blockquote>
+  <figcaption class="review__who">
+    <strong>{review.data.name}</strong>
+    {review.data.trip && <span>{review.data.trip}</span>}
+  </figcaption>
+</figure>
