@@ -14,7 +14,7 @@ function revealOnScroll() {
     const eachOnItsOwn = phone && box.getBoundingClientRect().height > window.innerHeight * 0.7;
     Array.from(box.children).forEach((child, i) => {
       const el = child as HTMLElement;
-      el.style.setProperty('--d', eachOnItsOwn ? '0ms' : `${Math.min(i, 8) * 90}ms`);
+      el.style.setProperty('--d', eachOnItsOwn ? '0ms' : `${Math.min(i, 8) * 45}ms`);
       if (eachOnItsOwn) own.add(el);
     });
   });
@@ -45,7 +45,7 @@ function revealOnScroll() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -6% 0px' },
+    { threshold: 0, rootMargin: '0px 0px 12% 0px' },
   );
   watch.forEach((_, target) => io.observe(target));
 
