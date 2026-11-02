@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Cta from '../../components/Cta.astro';
-import { categorySlug, url } from '../../data/site';
+import { categorySlug, formatDate, url } from '../../data/site';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('journal')).sort((a, b) => +b.data.date - +a.data.date);
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 const { post, newer, older } = Astro.props;
 const { Content } = await render(post);
 const d = post.data;
-const date = d.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const date = formatDate(d.date);
 ---
 <Base
   title={d.seoTitle ?? d.title}

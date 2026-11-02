@@ -14,8 +14,8 @@ const { category } = Astro.props;
 const posts = (await getCollection('journal', (p) => p.data.category === category)).sort((a, b) => +b.data.date - +a.data.date);
 ---
 <Base
-  title={`${category} | The Intrepid Journal`}
-  description={`${category} articles from the Intrepid Journal by Intrepid Luxe.`}
+  title={`${category} | The Intrepid Edit`}
+  description={`${category} articles from The Intrepid Edit by Intrepid Luxe.`}
   image="harbour-sunset.jpg"
 >
   <Banner title={category} image="harbour-sunset.jpg" />

@@ -12,7 +12,7 @@ interface Props {
   bodyClass?: string;
   noindex?: boolean;
 }
-const { title, description, image = 'hero-beach.jpg', type = 'website', bodyClass, noindex = false } = Astro.props;
+const { title, description, image = 'hero-palms-islands.jpg', type = 'website', bodyClass, noindex = false } = Astro.props;
 const fullTitle = title ? `${title} | Intrepid Luxe` : 'Intrepid Luxe | Personalised travel planning and booking';
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL(url(`/img/${image}`), Astro.site).href;

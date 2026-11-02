@@ -20,7 +20,7 @@ npm run build      # writes the finished site to site/dist
 | Phone, email, form link, social links, menu | `src/data/site.ts` |
 | Colours, fonts, layout | `src/styles/global.css` |
 | Photos | `public/img` |
-| Journal articles | `src/content/journal/*.md` |
+| The Intrepid Edit articles | `src/content/journal/*.md` |
 | Client reviews | `src/content/reviews/*.md` |
 
 ## Add a journal article
@@ -31,7 +31,7 @@ Create `src/content/journal/my-title.md`. The file name becomes the web address.
 ---
 title: "Why the Maldives suits a slow holiday"
 date: 2026-11-02
-category: Destination Guides
+category: Destinations
 summary: "One or two sentences shown on the article card and in Google."
 image: maldives.jpg          # optional, must exist in public/img (add the photo first)
 imageAlt: "A white sand beach"   # required whenever image is set
@@ -41,7 +41,7 @@ seoDescription: "Optional different description for Google"
 The article, written in Markdown.
 ```
 
-`category` must be one of: Travel Inspiration, Travel News, Seasonal Escapes, Destination Guides.
+`category` must be one of: News, Destinations, Hotels.
 
 ## Add a review
 
@@ -57,11 +57,11 @@ order: 1                         # optional, lower numbers show first
 What they said.
 ```
 
-The Journal and Reviews sections on the home page appear automatically once there is at least one.
+The Intrepid Edit and Reviews sections on the home page appear automatically once there is at least one.
 
 ## Search listing
 
-Every page has its own title and description in its `<Base ...>` tag. Journal articles use `seoTitle` and `seoDescription`.
+Every page has its own title and description in its `<Base ...>` tag. Intrepid Edit articles use `seoTitle` and `seoDescription`.
 
 ## Still to do
 

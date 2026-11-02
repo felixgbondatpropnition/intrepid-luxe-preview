@@ -1,16 +1,18 @@
 ---
-import { url } from '../data/site';
-const { post, level = 2 } = Astro.props;
+import { formatDate, url } from '../data/site';
+const { post, level = 2, row = false } = Astro.props;
 const Heading = `h${level}` as 'h2' | 'h3';
 const d = post.data;
 ---
-<article class="card">
+<article class:list={['card', { 'card--row': row }]}>
   <a href={url(`/journal/${post.id}/`)}>
     <div class="card__img">
       <img src={url(`/img/${d.image ?? 'sunset-sea-900.jpg'}`)} alt={d.imageAlt} loading="lazy" width="900" height="675" />
     </div>
-    <span class="card__cat">{d.category}</span>
-    <Heading>{d.title}</Heading>
-    <p>{d.summary}</p>
+    <div class="card__body">
+      <span class="card__meta"><span class="card__cat">{d.category}</span><time datetime={d.date.toISOString()}>{formatDate(d.date)}</time></span>
+      <Heading>{d.title}</Heading>
+      <p>{d.summary}</p>
+    </div>
   </a>
 </article>

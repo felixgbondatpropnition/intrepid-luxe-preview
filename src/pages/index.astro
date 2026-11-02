@@ -15,7 +15,7 @@ const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b
   bodyClass="has-hero"
 >
   <section class="hero">
-    <div class="media"><Photo name="hero-beach" fetchpriority="high" data-parallax="0.06" /></div>
+    <div class="media"><Photo name="hero-palms-islands" fetchpriority="high" data-parallax="0.06" /></div>
     <div class="wrap">
       <h1 class="split" aria-label="Holidays designed around you">
         <span class="w" aria-hidden="true"><span style="--i:0">Holidays</span></span>{" "}
@@ -36,15 +36,11 @@ const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b
       <div data-stagger>
         <span class="label">Welcome to Intrepid Luxe</span>
         <h2>A little luxury along the way</h2>
-        <p>I’m Emilie, founder of an independent travel business dedicated to creating personalised holidays and unforgettable experiences.</p>
-        <p>The name brings together everything I love about travel: the excitement of discovering somewhere new, with a little luxury along the way. I believe every holiday should feel personal to you, and planning it should be part of the enjoyment.</p>
-        <p>Whether you’re dreaming of a luxury escape, a family holiday, a romantic getaway, a cruise or a once-in-a-lifetime adventure, I’m here to bring your ideas to life.</p>
-        <p class="intro__sign">Emilie</p>
-        <div class="btn-row"><a class="btn btn--navy" href={url('/about/')}>More about me</a></div>
+        <p>I’m Emilie, founder of Intrepid Luxe, an independent travel business, dedicated to creating personalised holidays and unforgettable experiences.</p>
       </div>
       <div class="intro__photo" data-reveal="wipe">
         <picture>
-          <source media="(max-width: 820px)" srcset={`${url('/img/emilie-flowers-2-700.jpg')} 700w, ${url('/img/emilie-flowers-2.jpg')} 1500w`} sizes="100vw" />
+          <source media="(max-width: 820px)" srcset={`${url('/img/emilie-jaipur-700.jpg')} 700w, ${url('/img/emilie-jaipur.jpg')} 1125w`} sizes="100vw" />
           <Photo name="emilie-teal" alt="Emilie, founder of Intrepid Luxe" sizes="(min-width: 821px) 40vw, 100vw" loading="lazy" />
         </picture>
       </div>
@@ -58,6 +54,15 @@ const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b
     <div class="strip__item" data-reveal="wipe" style="--d:180ms"><Photo name="island" sizes="(min-width: 1021px) 25vw, 50vw" loading="lazy" data-parallax="0.06" /></div>
   </div>
 
+  <section class="section section--sand section--quote" aria-label="Client feedback">
+    <div class="wrap">
+      <figure class="pullquote" data-reveal>
+        <blockquote><p>It’s the attention to detail, thoughtful touches and personal service that really set Intrepid Luxe apart.</p></blockquote>
+        <figcaption>Victoria L.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="section" id="how-to-book">
     <div class="wrap">
       <div class="section__head" data-reveal>
@@ -70,17 +75,17 @@ const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b
         <li>
           <span class="steps__n">1</span>
           <h3>Let’s chat</h3>
-          <p>Tell me about your destination ideas, preferred dates, budget and the kind of holiday you have in mind. If you’re unsure where to begin, we can explore the possibilities together.</p>
+          <p>Tell me about your destination ideas, preferred dates, budget and the kind of holiday you have in mind. From relaxing beach breaks and city stays to tailor-made adventures and special celebrations, we’ll explore what suits your style.</p>
         </li>
         <li>
           <span class="steps__n">2</span>
           <h3>Leave the research to me</h3>
-          <p>I’ll explore options through my network of trusted travel suppliers, comparing accommodation, prices and experiences to create a personalised quote.</p>
+          <p>I’ll compare accommodation, prices and experiences through my network of almost 100 trusted travel suppliers to create a personalised quote. Your trip can include flights, accommodation, transfers, car hire and excursions, alongside theme park visits, sporting events and thoughtful extras.</p>
         </li>
         <li>
           <span class="steps__n">3</span>
           <h3>Make it yours</h3>
-          <p>We’ll review the options together and fine-tune the details until the holiday feels right for you. There’s no pressure to book.</p>
+          <p>We’ll review the options together and fine-tune the details until the holiday feels right for you. I’ll offer honest advice throughout, with no pressure to book.</p>
         </li>
         <li>
           <span class="steps__n">4</span>
@@ -93,7 +98,7 @@ const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b
         <h3>What does it cost?</h3>
         <div>
           <p>My travel planning and booking service comes at no extra cost to you. I receive commission from the travel suppliers when you book, so you benefit from my research, knowledge and personal service without an additional planning fee.</p>
-          <p>Depending on your booking, you may also benefit from exclusive extras and applicable ABTA and ATOL protection.</p>
+          <p>Depending on your booking, applicable ABTA and ATOL protection may also be available.</p>
         </div>
       </div>
     </div>
@@ -109,14 +114,12 @@ const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b
       </div>
 
       <ul class="why__list" data-stagger>
-        <li><h3>More time for you</h3><p>I take care of the research, comparisons and planning, so you can focus on looking forward to your holiday.</p></li>
-        <li><h3>Advice shaped around your needs</h3><p>You’ll receive honest recommendations and carefully considered options that reflect your preferences, priorities and budget.</p></li>
-        <li><h3>Competitive prices and thoughtful extras</h3><p>My supplier network gives you access to a wide range of holidays and special offers, with potential extras such as room upgrades or added benefits, where available.</p></li>
-        <li><h3>Someone to turn to</h3><p>You’ll have one dedicated point of contact before, during and after your trip, including help if plans change or problems arise.</p></li>
-        <li><h3>No additional planning fee</h3><p>Enjoy the knowledge, care and convenience of a personal travel advisor at no extra cost to you.</p></li>
+        <li><h3>More time for you</h3><p>I take care of the research, comparisons and planning, leaving you free to enjoy the anticipation of your next adventure.</p></li>
+        <li><h3>A holiday designed around you</h3><p>At the heart of Intrepid Luxe is a personal, one-to-one service. I take the time to understand what matters to you, offering honest recommendations that reflect your preferences, priorities and budget.</p></li>
+        <li><h3>Wide choice, competitive prices and thoughtful extras</h3><p>My trusted supplier network opens up a wide choice of holidays and special offers at competitive prices, including trade-only deals. Depending on your booking, you may also benefit from exclusive extras such as room upgrades or added benefits, where available.</p></li>
+        <li><h3>Someone to turn to</h3><p>From our first conversation until you’re safely home, you’ll have one dedicated point of contact who knows your plans and looks after the details, including help if plans change or problems arise.</p></li>
+        <li><h3>Personal service at no extra cost</h3><p>Enjoy the knowledge, care and convenience of a personal travel advisor without an additional planning fee.</p></li>
       </ul>
-
-      <p class="why__close" data-reveal>From the first idea to the journey home, I’m here to look after the details and help you make the most of your time away.</p>
     </div>
   </section>
 
@@ -124,11 +127,11 @@ const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b
     <section class="section">
       <div class="wrap">
         <div class="section__head" data-reveal>
-          <span class="label">The Intrepid Journal</span>
+          <span class="label">The Intrepid Edit</span>
           <h2>Travel inspiration and advice</h2>
         </div>
         <div class="cards" data-stagger>{posts.map((post) => <PostCard post={post} level={3} />)}</div>
-        <div class="btn-row"><a class="btn btn--navy" href={url('/journal/')}>Read the journal</a></div>
+        <div class="btn-row"><a class="btn btn--navy" href={url('/journal/')}>Read The Intrepid Edit</a></div>
       </div>
     </section>
   )}
