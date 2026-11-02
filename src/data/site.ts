@@ -7,13 +7,12 @@ export const SITE = {
   formUrl: 'https://www.cognitoforms.com/IntrepidLuxe/IntrepidLuxeTravelRequirements',
 };
 
-// Instagram is Emilie's real account. Facebook, TikTok and LinkedIn addresses are not in the brief,
-// so those three point at a search for the business until she sends the real addresses.
+// Emilie's real social accounts, sent by her on WhatsApp on 2 Nov 2026.
 export const SOCIAL = [
   { key: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/intrepid_luxe/' },
-  { key: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/search/top?q=Intrepid%20Luxe' },
-  { key: 'tiktok', label: 'TikTok', url: 'https://www.tiktok.com/search?q=Intrepid%20Luxe' },
-  { key: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/search/results/all/?keywords=Intrepid%20Luxe' },
+  { key: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61589246550646' },
+  { key: 'tiktok', label: 'TikTok', url: 'https://www.tiktok.com/@intrepid.luxe' },
+  { key: 'linkedin', label: 'LinkedIn', url: 'https://uk.linkedin.com/in/emilie-amos-556549310' },
 ] as const;
 
 export const NAV = [

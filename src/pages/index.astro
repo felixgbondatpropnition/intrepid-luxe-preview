@@ -37,12 +37,11 @@ const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b
         <span class="label">Welcome to Intrepid Luxe</span>
         <h2>A little luxury along the way</h2>
         <p>I’m Emilie, founder of Intrepid Luxe, an independent travel business, dedicated to creating personalised holidays and unforgettable experiences.</p>
+        <p>The name brings together everything I love about travel: the excitement of discovering somewhere new, with a little luxury along the way. I believe every holiday should feel personal to you, and planning it should be part of the enjoyment.</p>
+        <p>Whether you’re dreaming of a luxury escape, a family holiday, a romantic getaway, a cruise or a once-in-a-lifetime adventure, I’m here to bring your ideas to life.</p>
       </div>
       <div class="intro__photo" data-reveal="wipe">
-        <picture>
-          <source media="(max-width: 820px)" srcset={`${url('/img/emilie-jaipur-700.jpg')} 700w, ${url('/img/emilie-jaipur.jpg')} 1125w`} sizes="100vw" />
-          <Photo name="emilie-teal" alt="Emilie, founder of Intrepid Luxe" sizes="(min-width: 821px) 40vw, 100vw" loading="lazy" />
-        </picture>
+        <Photo name="emilie-jaipur" alt="Emilie, founder of Intrepid Luxe" sizes="(min-width: 821px) 40vw, 100vw" loading="lazy" />
       </div>
     </div>
   </section>
