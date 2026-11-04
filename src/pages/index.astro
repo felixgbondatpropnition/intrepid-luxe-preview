@@ -8,14 +8,16 @@ import PostCard from '../components/PostCard.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 
 const posts = (await getCollection('journal')).sort((a, b) => +b.data.date - +a.data.date).slice(0, 3);
-const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b.data.order).slice(0, 3);
+const allReviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b.data.order);
+const featured = allReviews.filter((r) => r.data.featured);
+const reviews = (featured.length ? featured : allReviews).slice(0, 3);
 ---
 <Base
   description="Intrepid Luxe is a personalised travel planning and booking service. Tell Emilie where you’d love to go and she’ll take care of the rest."
   bodyClass="has-hero"
 >
   <section class="hero">
-    <div class="media"><Photo name="hero-palms-islands" fetchpriority="high" data-parallax="0.06" /></div>
+    <div class="media"><Photo name="hero-limestone-cliffs" fetchpriority="high" data-parallax="0.06" /></div>
     <div class="wrap">
       <h1 class="split" aria-label="Holidays designed around you">
         <span class="w" aria-hidden="true"><span style="--i:0">Holidays</span></span>{" "}

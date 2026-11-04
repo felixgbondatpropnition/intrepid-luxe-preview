@@ -29,6 +29,7 @@ const reviews = defineCollection({
     trip: z.string().optional(),
     photo: z.string().optional(), // file name in public/img/reviews
     order: z.number().default(100),
+    featured: z.boolean().default(false), // shown on the home page; if none are set, the first three are
   }),
 });
 

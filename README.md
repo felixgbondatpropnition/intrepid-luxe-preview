@@ -53,6 +53,7 @@ name: Sarah and James
 trip: Maldives, October 2026     # optional
 photo: sarah-and-james.jpg       # optional
 order: 1                         # optional, lower numbers show first
+featured: true                   # optional, shows it on the home page (if none are set, the first three show)
 ---
 What they said.
 ```
@@ -66,6 +67,5 @@ Every page has its own title and description in its `<Base ...>` tag. Intrepid E
 ## Still to do
 
 - Deploying: nothing is published yet. The `dist` folder can go on Vercel, Netlify, Cloudflare Pages or any ordinary web host.
-- Facebook and TikTok addresses: set the real ones in `src/data/site.ts` (they currently search for the business).
 - Emilie editing without code: a content editor (for example Decap CMS or TinaCMS) can be added on top of the same files.
 - Privacy policy wording is a draft for Emilie to confirm.

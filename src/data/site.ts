@@ -33,6 +33,7 @@ export const CATEGORIES = ['News', 'Destinations', 'Hotels'] as const;
 export const PHOTOS: Record<string, { w: number; h: number; small?: number }> = {
   'hero-beach': { w: 2000, h: 1500, small: 900 },
   'hero-palms-islands': { w: 1320, h: 690, small: 900 },
+  'hero-limestone-cliffs': { w: 1320, h: 735, small: 900 },
   'hero-palms-sunset': { w: 2000, h: 1500, small: 900 },
   'harbour-sunset': { w: 1500, h: 2000, small: 900 },
   'pool': { w: 2000, h: 1500, small: 900 },
