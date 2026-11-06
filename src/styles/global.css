@@ -81,6 +81,7 @@ p{margin:0 0 1.15em}
 .hero{position:relative;overflow:hidden;display:flex;align-items:flex-end;min-height:clamp(540px,82vh,860px);min-height:clamp(540px,82svh,860px);background:var(--navy);color:#fff}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,54,.05) 25%,rgba(10,22,54,.72) 100%)}
 .hero .wrap{position:relative;z-index:1;padding-top:120px;padding-bottom:clamp(48px,8vw,96px)}
+.hero .media img{object-position:center 76%}
 .hero h1{color:#fff;max-width:17ch;margin-bottom:.3em;text-shadow:0 2px 24px rgba(10,22,54,.35)}
 .hero p{max-width:34em;font-size:clamp(1.1rem,1.6vw,1.3rem);margin:0;color:#fff}
 
@@ -198,7 +199,7 @@ body{overflow-x:clip}
 .about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);gap:clamp(32px,6vw,96px);align-items:start}
 .about .prose{margin:0}
 .about__photo{position:sticky;top:116px}
-.about__photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius)}
+.about__photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:40% center;border-radius:var(--radius)}
 
 /* Single post */
 .post-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem;color:var(--muted);margin-bottom:18px}
@@ -208,10 +209,10 @@ body{overflow-x:clip}
 .post-hero img{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:var(--radius)}
 .post-head{max-width:calc(var(--read) + var(--gutter) * 2);margin:0 auto clamp(24px,4vw,40px);padding:0 var(--gutter)}
 .post-head h1{font-size:clamp(2.2rem,4.6vw,3.6rem)}
-.post-nav{display:flex;justify-content:space-between;gap:24px;max-width:var(--read);margin:clamp(48px,7vw,80px) auto 0;font-family:var(--serif);font-size:1.4rem}
+.post-nav{display:flex;justify-content:space-between;gap:24px;max-width:var(--read);margin:clamp(48px,7vw,80px) auto 0;font-family:var(--serif);font-size:1.05rem;line-height:1.35}
 .post-nav a{text-decoration:none;color:var(--navy)}
 .post-nav a:hover{color:var(--turq-deep)}
-.post-nav span{display:block;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.post-nav span{display:block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .post-nav div:last-child{text-align:right;margin-left:auto}
 
 /* Contact */
@@ -279,15 +280,17 @@ body{overflow-x:clip}
   .intro__photo{order:-1}
   .intro__photo img{aspect-ratio:4/3;object-position:center 66%}
   .about__photo{position:static;order:-1}
-  .about__photo img{aspect-ratio:4/3;object-position:center 25%}
+  .about__photo img{aspect-ratio:4/3;object-position:center 64%}
 }
 
 @media (max-width:600px){
   body{font-size:1rem}
-  .hero::after{background:linear-gradient(180deg,rgba(10,22,54,.15) 0%,rgba(10,22,54,.52) 38%,rgba(10,22,54,.86) 100%)}
-  .hero .media img{object-position:70% center}
-  .hero h1{text-shadow:0 1px 2px rgba(10,22,54,.6)}
-  .hero p{text-shadow:0 1px 3px rgba(10,22,54,.55),0 2px 22px rgba(10,22,54,.5)}
+  /* Phones: the photo sits above the words on navy, so the whole picture shows and the text is always readable */
+  .hero{display:block;min-height:0}
+  .hero::after{display:none}
+  .hero .media{position:relative;inset:auto;height:min(100vw,60svh)}
+  .hero .media img{object-position:50% 50%}
+  .hero .wrap{padding-top:32px;padding-bottom:44px}
   .steps,.why__list,.cards,.reviews{grid-template-columns:1fr}
   .footer__grid{grid-template-columns:1fr}
   .post-hero img{aspect-ratio:4/3}
