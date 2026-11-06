@@ -288,8 +288,8 @@ body{overflow-x:clip}
   /* Phones: the photo sits above the words on navy, so the whole picture shows and the text is always readable */
   .hero{display:block;min-height:0}
   .hero::after{display:none}
-  .hero .media{position:relative;inset:auto;height:min(100vw,60svh)}
-  .hero .media img{object-position:50% 50%}
+  .hero .media{position:relative;inset:auto;height:auto;aspect-ratio:1277/1232;animation:none}
+  .hero .media img{top:0;height:100%;object-position:50% 50%}
   .hero .wrap{padding-top:32px;padding-bottom:44px}
   .steps,.why__list,.cards,.reviews{grid-template-columns:1fr}
   .footer__grid{grid-template-columns:1fr}
