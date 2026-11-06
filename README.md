@@ -6,10 +6,9 @@ The build produces ordinary HTML, CSS and a tiny bit of JavaScript that any host
 ## Run it
 
 ```
-cd site
 npm install        # first time only
 npm run dev        # http://localhost:4321
-npm run build      # writes the finished site to site/dist
+npm run build      # writes the finished site to dist
 ```
 
 ## Where things live
@@ -35,6 +34,7 @@ category: Destinations
 summary: "One or two sentences shown on the article card and in Google."
 image: maldives.jpg          # optional, must exist in public/img (add the photo first)
 imageAlt: "A white sand beach"   # required whenever image is set
+imagePosition: "center 70%"      # optional, where to crop the photo (default center)
 seoTitle: "Optional different title for Google"
 seoDescription: "Optional different description for Google"
 ---
@@ -60,12 +60,14 @@ What they said.
 
 The Intrepid Edit and Reviews sections on the home page appear automatically once there is at least one.
 
+For an article photo, also add a 900 pixel wide JPG copy named like the photo (for example `maldives-900.jpg`). The cards use it, so the list pages stay quick.
+
 ## Search listing
 
 Every page has its own title and description in its `<Base ...>` tag. Intrepid Edit articles use `seoTitle` and `seoDescription`.
 
 ## Still to do
 
-- Deploying: nothing is published yet. The `dist` folder can go on Vercel, Netlify, Cloudflare Pages or any ordinary web host.
+- Publishing: every push to `main` rebuilds the site and updates the `gh-pages` branch automatically (`.github/workflows/deploy.yml`). That build is the preview at `/intrepid-luxe-preview/`, hidden from search engines. Putting the site on `intrepidluxe.co.uk` needs a build without `SITE_BASE` and `PUBLIC_NOINDEX`, so do not simply point the domain at `gh-pages`.
 - Emilie editing without code: a content editor (for example Decap CMS or TinaCMS) can be added on top of the same files.
 - Privacy policy wording is a draft for Emilie to confirm.

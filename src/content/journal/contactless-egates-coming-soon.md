@@ -3,6 +3,9 @@ title: "Contactless eGates Coming Soon"
 date: 2026-11-02
 category: News
 summary: "Contactless eGates are coming to UK airports. Here is how they work and what they mean for your arrival."
+image: contactless-egates.jpg
+imageAlt: "Rows of contactless eGates in an airport arrivals hall"
+imagePosition: "center 55%"
 ---
 Whilst eGates have sped up airport waiting times, I still find myself wondering whether the whole process could be shorter. After a long flight, retrieving a passport, finding the photograph page and positioning it on a scanner can feel unnecessarily fiddly. Surely there is a simpler way?
 

@@ -37,7 +37,7 @@ const date = formatDate(d.date);
       </div>
     </section>
     {d.image && (
-      <div class="post-hero"><img src={url(`/img/${d.image}`)} alt={d.imageAlt} width="2000" height="1000" /></div>
+      <div class="post-hero"><img src={url(`/img/${d.image}`)} alt={d.imageAlt} width="2000" height="1000" style={`object-position:${d.imagePosition}`} /></div>
     )}
     <section class="section" style="padding-top:0">
       <div class="wrap">

@@ -13,6 +13,7 @@ const journal = defineCollection({
     summary: z.string(),
     image: z.string().optional(), // file name in public/img, for example "temple.jpg"
     imageAlt: z.string().default(''),
+    imagePosition: z.string().regex(/^(center|top|bottom|left|right|\d{1,3}%)( (center|top|bottom|left|right|\d{1,3}%))?$/).default('center'), // where to crop the photo, for example "center 70%"
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
   }).refine((d) => !d.image || d.imageAlt.trim() !== '', {

@@ -1,0 +1,50 @@
+# Rebuilds the site whenever something changes on main (a new review, article or photo)
+# and publishes it to the gh-pages branch, which is what GitHub Pages serves.
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        env:
+          SITE_URL: https://felixgbondatpropnition.github.io
+          SITE_BASE: /intrepid-luxe-preview
+          PUBLIC_NOINDEX: "1"
+        run: |
+          npx astro build --outDir dist-preview
+          printf 'User-agent: *\nDisallow: /\n' > dist-preview/robots.txt
+          touch dist-preview/.nojekyll
+
+      - name: Publish to gh-pages
+        run: |
+          git clone --depth 1 --branch gh-pages "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" pages
+          cd pages
+          git rm -rq .
+          cp -R ../dist-preview/. .
+          git add -A
+          if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Publish ${GITHUB_SHA::7}"
+          git push origin gh-pages

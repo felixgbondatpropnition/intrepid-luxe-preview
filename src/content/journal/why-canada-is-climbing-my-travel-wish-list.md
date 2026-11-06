@@ -3,6 +3,9 @@ title: "Why Canada Is Climbing My Travel Wish List"
 date: 2026-11-04
 category: Destinations
 summary: "Canada has climbed into the top ten destinations UK holidaymakers are considering. Here is the trip I would choose."
+image: canada-rocky-mountaineer.jpg
+imageAlt: "The Rocky Mountaineer train beneath forested mountains in the Canadian Rockies"
+imagePosition: "center"
 ---
 At a talk I went to at yesterday’s World Travel Market conference, I learnt that Canada has climbed into the top ten destinations UK holidaymakers are considering for their next trip. ABTA’s latest Holiday Habits report puts it in ninth place, up from twelfth last year, with 5% of those planning an overseas holiday intending to visit.
 

@@ -138,6 +138,9 @@ p{margin:0 0 1.15em}
 .card a:hover .card__img img{transform:scale(1.04)}
 .card__meta{display:flex;flex-wrap:wrap;gap:4px 0;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .card__cat{font-weight:700;color:var(--turq-deep)}
+.card__more{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--turq-deep);border-bottom:2px solid var(--turq)}
+.card__more::after{content:"\2192" / "";margin-left:.6em}
+.card a:hover .card__more{color:var(--navy);border-bottom-color:var(--navy)}
 .card__cat::after{content:"|" / "";margin:0 .9em;font-weight:400;color:var(--muted)}
 .card h2,.card h3{margin:0 0 .35em;font-size:1.7rem}
 .card a:hover h2,.card a:hover h3{color:var(--turq-deep)}
