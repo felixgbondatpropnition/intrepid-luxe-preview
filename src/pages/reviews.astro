@@ -1,12 +1,12 @@
 ---
-import { url } from '../data/site';
+import { sortReviews, url } from '../data/site';
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Banner from '../components/Banner.astro';
 import Cta from '../components/Cta.astro';
 import ReviewCard from '../components/ReviewCard.astro';
 
-const reviews = (await getCollection('reviews')).sort((a, b) => a.data.order - b.data.order);
+const reviews = sortReviews(await getCollection('reviews'));
 ---
 <Base
   title="Reviews"

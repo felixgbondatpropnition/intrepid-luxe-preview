@@ -1,6 +1,7 @@
 ---
 name: "Victoria L."
 order: 1
+date: 2026-10-31
 ---
 My daughter and I had a wonderful holiday on Kos, the first week of October, expertly organised by Intrepid Luxe.
 

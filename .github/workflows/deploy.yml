@@ -28,22 +28,32 @@ jobs:
 
       - run: npm ci
 
+      - name: Shrink photos for the web
+        run: node scripts/optimise-images.mjs public/img
+
+      # Until the repository variable LIVE_DOMAIN is set, this builds the private preview
+      # (in a sub-folder, hidden from search engines). Setting LIVE_DOMAIN=intrepidluxe.co.uk
+      # builds the real site for that address, open to search engines.
       - name: Build
         env:
-          SITE_URL: https://felixgbondatpropnition.github.io
-          SITE_BASE: /intrepid-luxe-preview
-          PUBLIC_NOINDEX: "1"
+          LIVE_DOMAIN: ${{ vars.LIVE_DOMAIN }}
         run: |
-          npx astro build --outDir dist-preview
-          printf 'User-agent: *\nDisallow: /\n' > dist-preview/robots.txt
-          touch dist-preview/.nojekyll
+          if [ -n "$LIVE_DOMAIN" ]; then
+            SITE_URL="https://$LIVE_DOMAIN" SITE_BASE=/ npx astro build --outDir dist-site
+            printf 'User-agent: *\nAllow: /\n\nSitemap: https://%s/sitemap-index.xml\n' "$LIVE_DOMAIN" > dist-site/robots.txt
+            echo "$LIVE_DOMAIN" > dist-site/CNAME
+          else
+            SITE_URL=https://felixgbondatpropnition.github.io SITE_BASE=/intrepid-luxe-preview PUBLIC_NOINDEX=1 npx astro build --outDir dist-site
+            printf 'User-agent: *\nDisallow: /\n' > dist-site/robots.txt
+          fi
+          touch dist-site/.nojekyll
 
       - name: Publish to gh-pages
         run: |
           git clone --depth 1 --branch gh-pages "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" pages
           cd pages
           git rm -rq .
-          cp -R ../dist-preview/. .
+          cp -R ../dist-site/. .
           git add -A
           if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Publish ${GITHUB_SHA::7}"

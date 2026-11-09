@@ -27,6 +27,11 @@ export const FOOTER_NAV = [...NAV.slice(1), { label: 'Privacy policy', href: '/p
 
 export const categorySlug = (name: string) => name.toLowerCase().replace(/\s+/g, '-');
 
+// Newest review first: dated reviews by date, then undated ones by their `order` number.
+export function sortReviews<T extends { data: { date?: Date; order: number } }>(list: T[]): T[] {
+  return [...list].sort((a, b) => (+(b.data.date ?? 0) - +(a.data.date ?? 0)) || a.data.order - b.data.order);
+}
+
 export const CATEGORIES = ['News', 'Destinations', 'Hotels'] as const;
 
 // Photos that have a smaller copy for phones: public/img/<name>-<small>.jpg next to the full-size file.

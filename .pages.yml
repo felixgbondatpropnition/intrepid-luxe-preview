@@ -1,0 +1,145 @@
+# Settings for Pages CMS (app.pagescms.org), the simple editor Emilie uses to add
+# reviews and Intrepid Edit articles. Saving there updates the site automatically.
+
+media:
+  - name: images
+    label: Photos
+    input: public/img
+    output: /img
+    rename: safe
+    extensions: [jpg, jpeg]
+  - name: review-photos
+    label: Review photos
+    input: public/img/reviews
+    output: /img/reviews
+    rename: safe
+    extensions: [jpg, jpeg]
+
+content:
+  - name: journal
+    label: The Intrepid Edit (articles)
+    type: collection
+    path: src/content/journal
+    filename: "{primary}.md"
+    format: yaml-frontmatter
+    operations:
+      rename: false
+    view:
+      fields: [title, category, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: The title appears large at the top of the article and on the cards.
+      - name: category
+        label: Section
+        type: select
+        required: true
+        options:
+          values: [News, Destinations, Hotels]
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+        description: Newest articles are shown first.
+      - name: summary
+        label: Short summary
+        type: text
+        required: true
+        description: One or two sentences, shown on the article card and in Google.
+      - name: image
+        label: Photo
+        type: image
+        description: Choose a photo you have uploaded, or upload a new one. Landscape photos look best.
+        options:
+          media: images
+          rename: safe
+      - name: imageAlt
+        label: Photo description
+        type: string
+        description: A few words describing the photo, for people who cannot see it. Needed whenever there is a photo.
+      - name: imagePosition
+        label: Which part of the photo to show
+        type: select
+        default: center
+        options:
+          values:
+            - name: center
+              label: The middle
+            - name: center 25%
+              label: Nearer the top
+            - name: center 75%
+              label: Nearer the bottom
+      - name: seoTitle
+        label: Title for Google (optional)
+        type: string
+        description: Leave empty to use the article title.
+      - name: seoDescription
+        label: Description for Google (optional)
+        type: text
+        description: Leave empty to use the short summary.
+      - name: body
+        label: Article
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+
+  - name: reviews
+    label: Reviews
+    type: collection
+    path: src/content/reviews
+    filename: "{primary}.md"
+    format: yaml-frontmatter
+    operations:
+      rename: false
+    view:
+      fields: [name, featured]
+      primary: name
+    fields:
+      - name: name
+        label: Name shown under the review
+        type: string
+        required: true
+        description: For example "Victoria L."
+      - name: date
+        label: Date added
+        type: date
+        options:
+          format: yyyy-MM-dd
+        description: Only used to put the newest review first. It is never shown on the site.
+      - name: featured
+        label: Show on the home page
+        type: boolean
+        default: false
+        description: The three newest ticked reviews appear on the home page.
+      - name: trip
+        label: Trip (optional)
+        type: string
+        description: For example "Kos, October 2026". Leave empty if you prefer.
+      - name: photo
+        label: Photo (optional)
+        type: image
+        options:
+          media: review-photos
+          rename: safe
+      - name: order
+        label: Order
+        type: number
+        hidden: true
+      - name: body
+        label: The review
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false

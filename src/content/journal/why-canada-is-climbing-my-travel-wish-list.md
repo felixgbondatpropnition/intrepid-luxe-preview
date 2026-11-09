@@ -3,7 +3,7 @@ title: "Why Canada Is Climbing My Travel Wish List"
 date: 2026-11-04
 category: Destinations
 summary: "Canada has climbed into the top ten destinations UK holidaymakers are considering. Here is the trip I would choose."
-image: canada-rocky-mountaineer.jpg
+image: /img/canada-rocky-mountaineer.jpg
 imageAlt: "The Rocky Mountaineer train beneath forested mountains in the Canadian Rockies"
 imagePosition: "center"
 ---

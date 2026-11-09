@@ -3,9 +3,9 @@ title: "Does ‘Do Not Disturb’ Still Mean What We Think?"
 date: 2026-11-03
 category: Hotels
 summary: "A “Do Not Disturb” sign does not always stop hotel staff entering. Here is what to ask at check-in."
-image: do-not-disturb-sign.jpg
+image: /img/do-not-disturb-sign.jpg
 imageAlt: "A leather Please Do Not Disturb sign hanging from a hotel door handle"
-imagePosition: "center 72%"
+imagePosition: "center 75%"
 ---
 When I put a ‘Do Not Disturb’ sign on a hotel door, I expect a lie-in, an uninterrupted shower or a few quiet hours without housekeeping knocking. I suspect most guests assume much the same.
 

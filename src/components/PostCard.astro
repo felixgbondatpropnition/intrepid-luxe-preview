@@ -5,7 +5,7 @@ const { post, level = 2, row = false } = Astro.props;
 const Heading = `h${level}` as 'h2' | 'h3';
 const d = post.data;
 // Cards show a smaller copy of the photo (name-900.jpg, JPG only) when there is one, so list pages stay quick.
-const small = d.image?.replace(/\.jpg$/, '-900.jpg');
+const small = d.image?.replace(/\.jpe?g$/i, '-900.jpg');
 const thumb = small && small !== d.image && existsSync(`public/img/${small}`) ? small : d.image;
 ---
 <article class:list={['card', { 'card--row': row }]}>

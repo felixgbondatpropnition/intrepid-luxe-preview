@@ -1,6 +1,7 @@
 ---
 name: "Georgina S."
 order: 3
+date: 2026-10-25
 ---
 From the moment I rang Emilie to look into a holiday I felt the holiday had begun. Her enthusiasm, efficiency & wonderful knowledge made it enormously relaxing.
 
