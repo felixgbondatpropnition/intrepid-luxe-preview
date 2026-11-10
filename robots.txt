@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://intrepidluxe.co.uk/sitemap-index.xml
