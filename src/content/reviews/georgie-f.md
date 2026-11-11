@@ -1,5 +1,5 @@
 ---
-name: Georgie F
+name: Georgie F.
 date: 2026-11-11
 featured: false
 ---
