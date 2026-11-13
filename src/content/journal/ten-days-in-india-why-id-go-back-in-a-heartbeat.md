@@ -10,7 +10,7 @@ I didn’t know what to expect from India.
 
  Heading out with two friends for a ten-day trip around Delhi and Jaipur, I honestly did know what to expect. 
 
-From what I’d read in the media and heard from others, I was half expecting Delhi belly, dirt everywhere and a huge amount of poverty Looking back, I realise how much those impressions had shaped my expectations before I’d even arrived.
+From what I’d read in the media and heard from others, I was half expecting Delhi belly, dirt everywhere and a huge amount of poverty. Looking back, I realise how much those impressions had shaped my expectations before I’d even arrived.
 
 What followed was the most incredible holiday, and an absolute eye-opener.
 
