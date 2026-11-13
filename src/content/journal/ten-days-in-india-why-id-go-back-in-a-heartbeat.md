@@ -26,7 +26,7 @@ Riots were taking place in Delhi while we were there, and we spent time cocooned
 
 Delhi and Jaipur each left a very different impression. 
 
-Delhi was vast, but once we knew where we were heading, we found we could navigate it quite easily. Jaipur was absolutely crazy in the most wonderful sense. Cows wandered through the streets, camels appeared in the road, and we even saw elephants walking along. After a while, very little surprised us, yet we never stopped looking\.
+Delhi was vast, but once we knew where we were heading, we found we could navigate it quite easily. Jaipur was absolutely crazy in the most wonderful sense. Cows wandered through the streets, camels appeared in the road, and we even saw elephants walking along. After a while, very little surprised us, yet we never stopped looking
 
 One camel encounter made it onto my Instagram, and that post has now reached almost a million views.  Clearly, I wasn’t the only person captivated by the sight!
 
