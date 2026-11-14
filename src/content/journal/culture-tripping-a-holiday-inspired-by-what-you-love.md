@@ -6,8 +6,6 @@ summary: "Culture tripping: a holiday inspired by what you love"
 image: /img/img6562-1.jpeg
 imagePosition: center
 ---
-
-
 As a child, I dreamt of going to Salzburg and recreating scenes from The Sound of Music. I wanted to see those gardens and mountain views for myself. I didn’t think of it as a cultural holiday, of course, but that’s exactly what I had in mind.
 
 “Culture tripping” now has a name, although the idea is familiar: planning a holiday around an exhibition, a concert, a favourite film or an artist whose work you love.
