@@ -4,7 +4,9 @@ category: News
 date: 2026-11-17
 summary: "Change to liquid limits on planes "
 image: /img/img6762.jpeg
+imageAlt: Cases
 imagePosition: center
+seoDescription: Changes to liquids on planes
 ---
 On recent flights, I’ve experienced the newer airport security scanners, and they’ve substantially shortened my time getting through security. Less unpacking and repacking makes the whole process feel smoother, and everything seems to run more efficiently. It’s made a real difference to the start of my trips.
 
