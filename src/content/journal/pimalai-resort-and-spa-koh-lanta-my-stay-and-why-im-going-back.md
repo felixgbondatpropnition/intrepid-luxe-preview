@@ -6,6 +6,8 @@ summary: "Pimalai review "
 image: /img/img6856.jpeg
 imageAlt: "Pimalai resort "
 imagePosition: center
+seoTitle: "Pimalai "
+seoDescription: "Pimalai hotel review "
 ---
 Some hotels make you happy as soon as you arrive. For me, Pimalai Resort & Spa on Koh Lanta is one of them. I tend to notice the little things when I stay somewhere, and here the details kept giving me reasons to smile, from the warm welcome to the lovely scent when we opened the door to our room.
 
