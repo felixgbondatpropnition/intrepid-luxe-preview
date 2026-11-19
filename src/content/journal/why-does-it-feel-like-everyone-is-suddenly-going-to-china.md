@@ -2,7 +2,7 @@
 title: Why does it feel like everyone is suddenly going to China?
 category: Destinations
 date: 2026-11-19
-summary: China visitors going up
+summary: China visitors going up.
 image: /img/img6857.jpeg
 imageAlt: China panda
 imagePosition: center
